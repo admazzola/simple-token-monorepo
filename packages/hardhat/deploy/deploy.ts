@@ -1,15 +1,13 @@
 import { DeployFunction } from 'hardhat-deploy/types'
 
 import { deploy } from '../utils/deploy-helpers'
-import { BigNumberish, BigNumber as BN } from 'ethers'
-import { HardhatRuntimeEnvironment } from 'hardhat/types'
-import { getTokens, getNetworkName} from '../config'
+ 
 
 const deployOptions: DeployFunction = async (hre) => {
   const { getNamedSigner, run, network, log } = hre
   const deployer = await getNamedSigner('deployer')
 
-  const tokens = getTokens(network)
+  
 
   // Make sure contracts are compiled
   await run('compile')
@@ -17,26 +15,17 @@ const deployOptions: DeployFunction = async (hre) => {
   log('')
   log('********** Deploying **********', { indent: 1 })
   log('')
- 
 
+  let tokenName = 'TOKENNAME'
+  let tokenSymbol = 'SYM'
+  let initialBalance = '1000000000000000000000000000000'
+ 
   const wethDeploy = await deploy({
-    contract: 'WETH9',
-    args: [ ],
+    contract: 'SimpleERC20',
+    args: [tokenName,tokenSymbol,initialBalance],
     skipIfAlreadyDeployed: false,
     hre,
-    /*proxy: {
-      proxyContract: 'OpenZeppelinTransparentProxy',
-      execute: {
-        init: {
-          methodName: 'initialize',
-          args: [
-            'Nifty Options',
-            'NFTYOPTS',
-            uriFetcher.address,
-          ]
-        }
-      }
-    },*/
+    
   })
 }
 
