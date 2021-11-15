@@ -8,8 +8,11 @@ Create the .env file in /packages/hardhat according to .env.template
 
 ```bash
 yarn install 
-yarn contracts build 
-yarn contracts test mainnet
+
+cd packages/hardhat 
+
+yarn build 
+yarn test mainnet
 ```
 
  
