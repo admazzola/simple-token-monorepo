@@ -3,6 +3,8 @@ pragma solidity ^0.8.0;
 
 import './CloneFactory.sol';
 
+
+
 contract Factory is CloneFactory {
      Child[] public children;
      address masterContract;
@@ -11,9 +13,9 @@ contract Factory is CloneFactory {
          masterContract = _masterContract;
      }
 
-     function createChild(uint data) external{
+     function createChild(string memory name_, string memory symbol_) external{
         Child child = Child(createClone(masterContract));
-        child.init(data);
+        child.init(name_,symbol_);
         children.push(child);
      }
 
@@ -27,7 +29,7 @@ contract Child{
     
     // use this function instead of the constructor
     // since creation will be done using createClone() function
-    function init(uint _data) external {
-        data = _data;
+    function init(string memory name_, string memory symbol_) public {
+         
     }
 }

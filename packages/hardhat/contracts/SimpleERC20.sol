@@ -186,6 +186,8 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
     string private _name;
     string private _symbol;
 
+    bool initialized = false;
+
     /**
      * @dev Sets the values for {name} and {symbol}.
      *
@@ -196,6 +198,13 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
      * construction.
      */
     constructor(string memory name_, string memory symbol_) {
+        init(name_,symbol_);
+    }
+
+    function init(string memory name_, string memory symbol_) public {
+        require(!initialized,'already initialized');
+        initialized = true;
+       
         _name = name_;
         _symbol = symbol_;
     }

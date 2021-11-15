@@ -44,7 +44,11 @@ describe('SimpleERC20', function () {
     })
 
     it('should be able to deploy proxy', async () => {
-      await factoryContract.createChild( ).send({from: await user.getAddress()})
+      let inputData = 0;
+
+      let result = await factoryContract.createChild( 'name', 'lll' )//.send({from: await user.getAddress()})
+
+      console.log('result',result)
     })
   })
 
