@@ -1588,6 +1588,93 @@
         "IERC20Metadata",
         "SimpleERC20"
       ]
+    },
+    "/home/andy/dev/simple-token-monorepo/packages/hardhat/contracts/CloneFactory.sol": {
+      "lastModificationDate": 1636989741519,
+      "contentHash": "b15db709a3d3d0b9212e54f762011ded",
+      "sourceName": "contracts/CloneFactory.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "CloneFactory"
+      ]
+    },
+    "/home/andy/dev/simple-token-monorepo/packages/hardhat/contracts/Factory.sol": {
+      "lastModificationDate": 1636989755471,
+      "contentHash": "892e6f843096f8b26532b039c4e29335",
+      "sourceName": "contracts/Factory.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [
+        "./CloneFactory.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Child",
+        "Factory"
+      ]
     }
   }
 }

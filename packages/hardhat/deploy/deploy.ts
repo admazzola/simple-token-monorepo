@@ -20,9 +20,18 @@ const deployOptions: DeployFunction = async (hre) => {
   let tokenSymbol = 'SYM'
   let initialBalance = '1000000000000000000000000000000'
  
-  const wethDeploy = await deploy({
+  const erc20Deploy = await deploy({
     contract: 'SimpleERC20',
     args: [tokenName,tokenSymbol,initialBalance],
+    skipIfAlreadyDeployed: false,
+    hre,
+    
+  })
+
+
+  const factoryDeploy = await deploy({
+    contract: 'Factory',
+    args: [erc20Deploy.address],
     skipIfAlreadyDeployed: false,
     hre,
     
