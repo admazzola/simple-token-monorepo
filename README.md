@@ -13,14 +13,27 @@ yarn contracts test mainnet
 ```
 
  
-## How to Deploy 
+## How to Deploy to Rinkeby
 
 ```
 cd packages/hardhat 
 
+yarn generate  (this generates a new account. It will make two files. One named mnemonic.txt and one with a public address. You need to set Rinkeby ETH to that public address)
+
 yarn deploy --network rinkeby 
 
-yarn etherscan-verify --network rinkeby --license MIT 
+yarn verify --network rinkeby --license MIT 
+```
+
+## How to Deploy to Mainnet
+```
+cd packages/hardhat 
+
+yarn generate  (this generates a new account. It will make two files. One named mnemonic.txt and one with a public address. You need to set Mainnet ETH to that public address)
+
+yarn deploy --network mainnet 
+
+yarn verify --network mainnet --license MIT 
 ```
 
 ## How to Run Frontend 

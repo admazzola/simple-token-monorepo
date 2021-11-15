@@ -70,7 +70,7 @@ async function main() {
     files.forEach(function (file) {
       if (file.indexOf(".json") >= 0) {
         const contractName = file.replace(".json", "");
-        publishContract(contractName, directory);
+        //publishContract(contractName, directory);
       }
     });
   });
